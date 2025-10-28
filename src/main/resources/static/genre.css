@@ -1,0 +1,124 @@
+/*-----------------------------------
+  全体設定
+-----------------------------------*/
+body {
+  min-height: 100vh; /* 画面全体の高さを確保 */
+  display: flex;      /* ヘッダー・コンテンツ・フッターを縦方向に並べる */
+  flex-direction: column;
+  margin: 0;          /* ブラウザデフォルトの余白を消す */
+  background-color: #f8f8f8; /* ページ全体の背景色 */
+  font-family: sans-serif;   /* フォントを統一 */
+}
+
+/*-----------------------------------
+  ヘッダー
+-----------------------------------*/
+.header {
+  height: 70px;                     /* 高さ70pxの固定ヘッダー */
+  text-align: center;               /* テキスト中央寄せ */
+  background-color: #eee;           /* ヘッダーの背景色 */
+  display: flex;                    /* Flexで縦横中央揃え */
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;                /* 太字 */
+  font-size: 20px;                  /* フォントサイズ */
+}
+
+/*-----------------------------------
+  コンテンツ領域（画像グリッド）
+-----------------------------------*/
+.content {
+  display: grid;                      /* CSSグリッドレイアウトで並べる */
+ grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 列数自動調整、最小180px */
+  gap: 40px 20px;                          /* グリッド内の行間・列間 */
+  padding: 30px 40px;                 /* 内側の余白 */
+  background-color: #ffffff;          /* 白背景 */
+  border-radius: 12px;                /* 角を丸くする */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* 影を付けて浮き上がる感じ */
+  margin: 20px auto;                  /* 上下の余白＋中央寄せ */
+  width: 90%;                         /* 幅を画面の90%に制限 */
+  max-width: 1000px;                  /* 最大幅を1000pxに制限 */
+  box-sizing: border-box;             /* paddingを含めて幅を計算 */
+}
+
+/*-----------------------------------
+  画像カード
+-----------------------------------*/
+.image {
+  position: relative; /* 子要素の絶対配置を基準にする */
+  overflow: hidden;   /* はみ出す部分を隠す */
+  border-radius: 10px; /* 角を丸くする */
+  background-color: #eee; /* 背景色（画像がない時の色） */
+  height: 210px;      /* 高さ固定 */
+}
+
+/*-----------------------------------
+  画像上の文字（左上に表示）
+-----------------------------------*/
+.caption {
+  position: absolute;            /* 画像の左上に重ねる */
+  top: 8px;                      /* 上から8px */
+  left: 8px;                     /* 左から8px */
+  color: #fff;                   /* 文字色は白 */
+  font-weight: bold;             /* 太字 */
+  font-size: 14px;               /* 小さめの文字 */
+  background-color: rgba(0, 0, 0, 0.5); /* 半透明の黒背景 */
+  padding: 5px 10px;             /* 内側余白 */
+  border-radius: 5px;            /* 角丸 */
+  z-index: 2;                    /* 画像より前面に表示 */
+}
+
+/*-----------------------------------
+  画像
+-----------------------------------*/
+.image img {
+  width: 100%;                    /* 親の幅にフィット */
+  height: 100%;                   /* 親の高さにフィット */
+  object-fit: cover;              /* 画像の縦横比を維持しつつ枠いっぱいに表示 */
+  border-radius: 10px;            /* 角丸で親と揃える */
+  display: block;                 /* インライン余白を消す */
+  transition: transform 0.3s;     /* ホバー時の拡大をスムーズに */
+}
+
+/* 画像ホバー時 */
+.image img:hover {
+  transform: scale(1.05);         /* 少し拡大して浮き上がる効果 */
+}
+
+/*-----------------------------------
+  フッター
+-----------------------------------*/
+.footer {
+  height: 70px;                     /* 高さ70px */
+  text-align: center;               /* 文字中央寄せ */
+  background-color: #eee;           /* 背景色 */
+  display: flex;                    /* Flexで縦横中央揃え */
+  align-items: center;
+  justify-content: center;
+}
+
+/*-----------------------------------
+  ボタンデザイン
+-----------------------------------*/
+.submit-btn {
+  background-color: #2d89ef;       /* 青い背景 */
+  color: white;                     /* 白文字 */
+  font-size: 18px;                  /* 大きめ文字 */
+  font-weight: bold;                /* 太字 */
+  padding: 12px 30px;               /* 内側余白 */
+  border: none;                     /* デフォルト枠線消去 */
+  border-radius: 30px;              /* 丸み */
+  cursor: pointer;                  /* マウスカーソルを手に */
+  transition: background-color 0.3s, transform 0.2s; /* アニメーション */
+}
+
+/* ボタンホバー時 */
+.submit-btn:hover {
+  background-color: #1e5dbf;        /* 少し濃い青 */
+  transform: scale(1.05);           /* 少し拡大 */
+}
+
+/* ボタン押下時 */
+.submit-btn:active {
+  transform: scale(0.98);           /* 押した感を出す */
+}

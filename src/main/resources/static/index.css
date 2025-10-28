@@ -1,0 +1,106 @@
+/* ===== 基本レイアウト ===== */
+.f {
+  padding-top: 50px;
+  position: relative;
+  z-index: 0;
+}
+.f::before {
+  content: "";
+  position: absolute;
+  bottom: 50px;
+  border-style: solid;
+  border-width: 0 0 100px 100vw;
+  border-color: transparent transparent #fff;
+}
+
+/* ===== ヘッダー ===== */
+.logo {
+  width: 100px;
+  height: 40px;  
+  margin-top: 14px;
+}
+
+.header {
+  display: flex;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 4%;
+  justify-content: space-between;
+}
+
+/* ===== 背景設定 ===== */
+.a {
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+/* ===== ナビゲーションメニュー ===== */
+.b {
+  display: flex;
+  font-size: 18px;
+  text-transform: uppercase;
+  margin-top: 30px;
+  list-style: none;
+}
+.b li {
+  margin-left: 30px;
+}
+.b li a {
+  text-transform: none;
+  color: honeydew;
+  background-color: rgb(245, 3, 3);
+  text-decoration: none;
+}
+
+/* ===== コンテンツ中央揃え ===== */
+.c {
+  text-align: center;
+  justify-content: center;
+}
+.c p {
+  font-size: 16px;
+  margin: 10px 0 42px;
+}
+
+/* ===== 大きな文字 ===== */
+.d {
+  font-size: 80px;
+  color:#66FFCC;
+  font-weight: normal;
+  margin-top: 0; /* -10% から 0 に変更 */
+}
+
+/* ===== ボタンスタイル ===== */
+.button {
+  font-size: 18px;
+  background-color: #4d81f1;
+  color: #fff;
+  border-radius: 5px;
+  padding: 18px 32px;
+  text-decoration: none;
+  /* ここから追加/変更 */
+  margin-right: 50px; /* 右側に20pxの余白を追加 */
+}
+/* ===== ホームセクション ===== */
+#home {
+  background-image: url(img/your-new-image.jpg); /* ここを変更！ */
+  background-color: #f6f5f4;
+  min-height: 100vh;
+}
+/* 最後のボタンの右マージンを削除して、レイアウトが崩れないようにする */
+.button:last-child {
+  margin-right: 0;
+}
+#home .d {
+  text-transform: none;
+}
+
+/* ===== フレックスセンター配置 ===== */
+.e {
+  /* height: 100vh;  中央配置に必要な高さを削除またはコメントアウト */
+  display: flex;
+  /* align-items: center;  垂直中央配置を解除 */
+  justify-content: center;
+  padding-top: 15vh; /* 画面の上端から15%の余白を設定 */
+}

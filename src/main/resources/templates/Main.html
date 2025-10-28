@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>メインページ</title>
+  <link rel="stylesheet" href="Main.css">
+</head>
+<body>
+
+  <!-- 🔹 サイドバー -->
+  <div id="sidebar" class="sidebar">
+    <a href="#">お気に入り一覧</a>
+    <a href="#">共有</a>
+  </div>
+
+  <!-- サイドバーを開いたときに画面全体を少し暗くするための透明なレイヤー　-->
+  <div id="overlay"></div>
+
+  <!-- 🔹 ヘッダー -->
+  <header>
+    <div class="menu-btn" id="menuBtn">☰</div>
+    <div class="header-icon">現在地の天気🌤️</div>
+    <div class="weather-scroll">
+      <div class="weather-content">
+        現在地：東京　気温 22℃　晴れ　湿度 55%　風速 3m/s　
+        | 明日：曇り時々雨　最高 20℃ 最低 15℃　
+        | 明後日：晴れ　最高 24℃ 最低 16℃
+      </div>
+    </div>
+    <a href="#" class="header-right-icon">🔔</a>
+  </header>
+
+  <!-- 🔹 メインエリア -->
+  <div class="main">
+    <div class="center-content">
+      <h2>季節おすすめ</h2>
+      <p>ここにおすすめコンテンツを表示します。</p>
+    </div>
+    <div class="right-side">
+      <div class="container-box">右コンテナ①（お知らせ・ランキングなど）</div>
+      <div class="container-box">右コンテナ②（イベント情報など）</div>
+      <button>プラン作成</button>
+    </div>
+  </div>
+
+  <!-- 🔹 JavaScript -->
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
+
+    // ☰クリックでサイドバーとオーバーレイを切り替え
+    menuBtn.addEventListener('click', () => {
+      sidebar.classList.toggle('open');
+      overlay.classList.toggle('active');
+    });
+
+    // サイドバー外クリックで自動的に閉じる
+    document.addEventListener('click', (event) => {
+      const clickedInsideSidebar = sidebar.contains(event.target);
+      const clickedMenuBtn = menuBtn.contains(event.target);
+
+      if (sidebar.classList.contains('open') && !clickedInsideSidebar && !clickedMenuBtn) {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('active');
+      }
+    });
+  </script>
+
+</body>
+</html>
