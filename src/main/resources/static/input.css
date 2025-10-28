@@ -1,0 +1,69 @@
+body {
+	font-family: sans-serif;
+	background: #fafafa;
+	margin: 40px;
+}
+
+h1 {
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+form {
+	width: 100%;
+	max-width: 600px;
+	margin: 0 auto;
+}
+
+label {
+	display: block;
+	margin-top: 20px;
+	font-weight: bold;
+}
+
+input[type="text"],
+select {
+	width: 100%;
+	padding: 8px;
+	margin-top: 5px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	box-sizing: border-box;
+}
+
+.gender-group {
+	margin-top: 5px;
+}
+
+.gender-group label {
+	display: inline-block;
+	margin-right: 15px;
+	font-weight: normal;
+}
+
+/* 生年月日セレクトを横並び */
+.birth-group {
+	display: flex;
+	gap: 10px;
+	margin-top: 5px;
+}
+
+.birth-group select {
+	flex: 1;
+}
+
+button {
+	margin-top: 30px;
+	width: 100%;
+	padding: 12px;
+	background: #4CAF50;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 16px;
+}
+
+button:hover {
+	background: #45a049;
+}

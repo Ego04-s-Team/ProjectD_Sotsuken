@@ -1,0 +1,79 @@
+/* ==== ヘッダー ==== */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #1e88e5;
+  color: white;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  z-index: 10;
+}
+
+.menu-btn {
+  font-size: 28px;
+  cursor: pointer;
+  margin-right: 15px;
+}
+
+.header-icon {
+  font-size: 22px;
+  margin-right: 0px;
+}
+
+.header-right-icon {
+  font-size: 24px;
+  margin-left: 15px;
+  cursor: pointer;
+}
+/* ==== サイドバー ==== */
+.sidebar {
+  position: fixed;
+  top: 70px;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background: #263238;
+  color: #fff;
+  transition: 0.3s;
+  padding-top: 20px;
+  z-index: 9;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.sidebar a {
+  display: block;
+  padding: 18px;
+  padding-top: 50px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1em;
+}
+
+.sidebar a:hover {
+  background: #37474f;
+}
+
+/* ==== オーバーレイ ==== */
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  display: none;
+  z-index: 8;
+}
+
+#overlay.active {
+  display: block;
+}
+/*ヘッダー、サイドバーテンプレここまで*/
