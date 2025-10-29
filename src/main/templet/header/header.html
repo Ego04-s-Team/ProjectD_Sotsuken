@@ -19,6 +19,29 @@
 	      <div class="menu-btn" id="menuBtn">☰</div>
 	      <a href="#" class="header-right-icon">🔔</a>
 	    </header>
+		
+		<script>
+				  const menuBtn = document.getElementById('menuBtn');
+				  const sidebar = document.getElementById('sidebar');
+				  const overlay = document.getElementById('overlay');
+
+				  // ☰クリックでサイドバーとオーバーレイを切り替え
+				  menuBtn.addEventListener('click', () => {
+				    sidebar.classList.toggle('open');
+				    overlay.classList.toggle('active');
+				  });
+
+				  // サイドバー外クリックで自動的に閉じる
+				  document.addEventListener('click', (event) => {
+				    const clickedInsideSidebar = sidebar.contains(event.target);
+				    const clickedMenuBtn = menuBtn.contains(event.target);
+
+				    if (sidebar.classList.contains('open') && !clickedInsideSidebar && !clickedMenuBtn) {
+				      sidebar.classList.remove('open');
+				      overlay.classList.remove('active');
+				    }
+				  });
+				</script>
 		<!-- サイドバーテンプレここまで -->
 </body>
 </html>
